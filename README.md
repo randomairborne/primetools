@@ -1,3 +1,7 @@
 # primetools
 ## a prime number toolset for python, written in rust/PyO3
-This project is currently in development.
+```py
+import primetools
+print(primetools.get_primes_to(100))
+```
+More functionality coming soon (tm)
