@@ -23,6 +23,8 @@ fn get_primes_to(largest_number_wanted: u128) -> Vec<u128> {
             primes.push(prime);
         }
     }
+    // add a 2 to the start
+    primes.splice(0..0, [2].iter().cloned());
     return primes;
 }
 
