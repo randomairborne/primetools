@@ -5,9 +5,14 @@ To install, run
 ```bash
 pip install primetools
 ```
-```py
-import primetools
-print(primetools.get_primes_to(100))
+```pycon
+>>> import primetools
+>>> primetools.get_primes_to(10)
+[3, 5, 7]
+>>> primetools.is_prime(42)
+False
+>>> primetools.is_prime(97)
+True
 ```
 More functionality coming soon (tm)
 
