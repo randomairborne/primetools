@@ -139,4 +139,4 @@ cython_debug/
 
 # module-specific things
 Cargo.lock
-target/
+.idea
