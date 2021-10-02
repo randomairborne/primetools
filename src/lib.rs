@@ -26,36 +26,35 @@ fn get_primes_to(largest_number_wanted: u128) -> Vec<u128> {
     return primes;
 }
 
-#[pyfunction]
-/// Gets a certain amount of prime numbers
-fn get_primes_amount(count: u128) -> Vec<u128> {
-    let mut primes = vec![true; (count + 1) as usize];
-    let mut p = 2;
-    while p * p <= count {
-        if primes[p as usize] {
-            let mut index = p * p;
-            while index <= count {
-                primes[index as usize] = false;
-                index += p;
-            }
-        }
 
-        p += 1;
+#[pyfunction]
+/// Checks whether a given number is prime
+fn is_prime(number_being_checked: u64) -> bool {
+    // Assumes that n is a positive natural number
+    // We know 1 is not a prime number
+    if number_being_checked == 1 {
+        return false;
     }
-    let mut result = vec![];
-    for (i, p) in primes.iter().enumerate() {
-        if *p {
-            result.push(i as u128);
+
+    let mut i = 2;
+            // This will loop from 2 to int(sqrt(x))
+    while i * i <= number_being_checked {
+            // Check if i divides x without leaving a remainder
+        if number_being_checked % i == 0 {
+            // This means that n has a factor in between 2 and sqrt(n)
+            // So it is not a prime number
+            return false;
         }
+        i += 1;
     }
-    result.remove(0);
-    result.remove(0);
-    return result;
+    // If we did not find any factor in the above loop,
+    // then n is a prime number
+    return true;
 }
 
 #[pymodule]
 fn primetools(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(get_primes_to, m)?)?;
-    m.add_function(wrap_pyfunction!(get_primes_amount, m)?)?;
+    m.add_function(wrap_pyfunction!(is_prime, m)?)?;
     Ok(())
 }
