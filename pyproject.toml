@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "primetools"
-version = "0.0.1"
+version = "0.0.1.post1"
 author = "valkyrie_pilot"
 author_email = "valk@randomairborne.dev"
 description = "Prime number tools written in rust."

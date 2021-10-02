@@ -140,3 +140,4 @@ cython_debug/
 # module-specific things
 Cargo.lock
 .idea
+release.bat
