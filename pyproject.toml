@@ -4,22 +4,12 @@ build-backend = "maturin"
 
 [project]
 name = "primetools"
-version = "0.0.1.post1"
-author = "valkyrie_pilot"
-author_email = "valk@randomairborne.dev"
+version = "0.0.1.post2"
+authors = [
+    {name = "valkyrie_pilot", email = "valk@randomairborne.dev"},
+]
 description = "Prime number tools written in rust."
-# there is not a good way to load it f
-long_description = """
-# primetools
-## a prime number toolset for python, written in rust/PyO3
-```py
-import primetools
-print(primetools.get_primes_to(100))
-```
-More functionality coming soon (tm)
-"""
-long_description_content_type = "text/markdown"
-url = "https://github.com/randomairborne/primetools"
+readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -29,3 +19,6 @@ classifiers = [
     "Operating System :: POSIX :: Linux",
     "Programming Language :: Rust"
 ]
+
+[project.urls]
+Source = "https://github.com/randomairborne/primetools"
