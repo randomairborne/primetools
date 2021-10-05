@@ -1,7 +1,7 @@
 # primetools
 ## a prime number toolset for python, written in rust/PyO3
 This project is currently in development.
-To install, run
+To install, make sure you have an up-to-date Pip version **or** rust compiler tools, then run
 ```bash
 pip install primetools
 ```
